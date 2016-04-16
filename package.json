@@ -1,0 +1,39 @@
+{
+  "name": "koliseo-agenda",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "babel": "^5.6.4",
+    "babelify": "^6.1.2",
+    "browser-sync": "^2.7.12",
+    "browserify": "^10.2.4",
+    "del": "^1.2.0",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.0.1",
+    "gulp-combine-media-queries": "^0.2.0",
+    "gulp-css-inline-images": "^0.1.1",
+    "gulp-imagemin": "^2.3.0",
+    "gulp-load-plugins": "^1.0.0-rc",
+    "gulp-minify-css": "^1.1.6",
+    "gulp-notify": "^2.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.0.1",
+    "gulp-size": "^1.2.2",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-streamify": "0.0.5",
+    "gulp-uglify": "^1.0.1",
+    "mocha": "^2.2.5",
+    "node-inspector": "^0.12.2",
+    "q": "^1.4.1",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "react-router": "^2.0.1",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "engines": {
+    "node": ">=0.10.0",
+    "npm": ">=2.1.18"
+  }
+}
