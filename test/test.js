@@ -1,4 +1,4 @@
-import { Menu } from "../lib/main";
+import { Menu, MenuItem } from "../lib/main";
 import { Router, Route, Link, Redirect, hashHistory } from "react-router";
 import ReactDOM from "react-dom";
 import React from "react";
@@ -6,7 +6,7 @@ import React from "react";
 let createDummyComponent = function(label) {
   return React.createClass({
     render: function() { 
-      return <div className="test-selected-contents">{label}</div> 
+      return ( <div className="test-selected-contents">{label}</div> )
     }
   })
 }
@@ -17,14 +17,14 @@ let MyAppComponent = React.createClass({
     return (
       <div>
         <Menu>
-          <Link className="menu-item" to="events">Events</Link>
-          <Link className="menu-item" to="books">Books</Link>
-          <Link className="menu-item" to="theater">Theater</Link>
-          <Link className="menu-item" to="music">Music</Link>
-          <Link className="menu-item" to="base">BASE jump</Link>
-          <Link className="menu-item" to="chess">Chess</Link>
-          <Link className="menu-item" to="go">Go</Link>
-          <Link className="menu-item" to="cars">Cars</Link>
+          <MenuItem className="menu-item" to="events">Events</MenuItem>
+          <MenuItem className="menu-item" to="books">Books</MenuItem>
+          <MenuItem className="menu-item" to="theater">Theater</MenuItem>
+          <MenuItem className="menu-item" to="music">Music</MenuItem>
+          <MenuItem className="menu-item" to="base">BASE jump</MenuItem>
+          <MenuItem className="menu-item" to="chess">Chess</MenuItem>
+          <MenuItem className="menu-item" to="go">Go</MenuItem>
+          <MenuItem className="menu-item" to="cars">Cars</MenuItem>
         </Menu>
         { this.props.children }
       </div>

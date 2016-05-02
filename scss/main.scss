@@ -9,3 +9,31 @@
 	color: #222;
 	text-decoration: none;
 }
+.kebab-menu {
+  display: inline-block;
+  &.hidden {
+    display: none;
+  }
+}
+
+$kebab-active-color: #ccc;
+$kebab-active-bg: #eee;
+
+.kebab-menu-button {
+  cursor: pointer;
+  display: inline-block;
+  &:hover, &:focused {
+    border: $kebab-active-color;
+    background-color: $kebab-active-bg;
+  }
+}
+
+$dotWidth: 5px;
+
+.kebab-menu-button-dot {
+  width: $dotWidth;
+  height: $dotWidth;
+  border-radius: 50%;
+  background: $kebab-active-color;
+  margin: 3px 6px;
+}
