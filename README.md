@@ -4,7 +4,7 @@ This responsive menu will hide any options that don't fit in the screen into
 a popup menu ("under the rug"). It also works while resizing the window.
 
 Inspired in [OkayNav](https://github.com/VPenkov/okayNav), but developed for 
-React and React Router. 
+React and React Router. The module itself is tiny if you don't include React (below 200 lines).
 
 ## Use
 
