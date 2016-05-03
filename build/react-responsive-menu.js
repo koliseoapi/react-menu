@@ -52,20 +52,57 @@ var KebabMenu = _react2.default.createClass({
   displayName: "KebabMenu",
 
 
+  getInitialState: function getInitialState() {
+    return {
+      // true to display the drop-down options
+      popupVisible: false
+    };
+  },
+
+  switchPopupVisible: function switchPopupVisible() {
+    this.setState({
+      popupVisible: !this.state.popupVisible
+    });
+  },
+
+  bodyClick: function bodyClick(e) {
+    if (this.state.popupVisible) {
+      this.setState({
+        popupVisible: false
+      });
+    }
+  },
+
+  componentDidMount: function componentDidMount() {
+    document.body.addEventListener('click', this.bodyClick);
+  },
+
+  componentWillUnmount: function componentWillUnmount() {
+    document.body.removeEventListener('click', this.bodyClick);
+  },
+
   render: function render() {
     var children = this.props.children;
+    var popupVisible = this.state.popupVisible;
+
+    var popupClassName = popupVisible ? '' : ' hidden';
 
     return _react2.default.createElement(
       "div",
       { className: "kebab-menu" + (!children || !children.length ? ' hidden' : '') },
       _react2.default.createElement(
         "a",
-        { className: "kebab-menu-button" },
-        _react2.default.createElement("div", { className: "kebab-menu-button-dot" }),
-        _react2.default.createElement("div", { className: "kebab-menu-button-dot" }),
-        _react2.default.createElement("div", { className: "kebab-menu-button-dot" })
+        { className: "kebab-menu-button", onClick: this.switchPopupVisible },
+        _react2.default.createElement("span", { className: "kebab-menu-button-dot" }),
+        _react2.default.createElement("span", { className: "kebab-menu-button-dot" }),
+        _react2.default.createElement("span", { className: "kebab-menu-button-dot" })
       ),
-      children
+      _react2.default.createElement(
+        "div",
+        { className: 'kebab-menu-contents' + popupClassName },
+        _react2.default.createElement("div", { className: "before" }),
+        children
+      )
     );
   }
 
@@ -95,8 +132,6 @@ var Menu = _react2.default.createClass({
   componentDidMount: function componentDidMount() {
     var elementWidths = this.state.elementWidths;
     if (!elementWidths) {
-      // index of the currently selected menu item, 0 if none
-      var selectedIndex = 0;
 
       // array of widths of each menu item
       // const elementWidths = Object.keys(this.refs).map((ref, index) => {
@@ -106,23 +141,19 @@ var Menu = _react2.default.createClass({
       var menuContainerWidth = this.getMenuContainerWidth();
       var _elementWidths = Array.prototype.map.call(domNode.children, function (childDomNode, index) {
         var ew = childDomNode.offsetWidth;
-        if (childDomNode.classList.contains('active')) {
-          selectedIndex = index;
-        }
         return ew;
       });
       this.setState({
         elementWidths: _elementWidths,
-        selectedIndex: selectedIndex,
         menuContainerWidth: menuContainerWidth
       });
     }
   },
 
   getMenuContainerWidth: function getMenuContainerWidth() {
-    var domNode = _reactDom2.default.findDOMNode(this);
-    var kebabNode = _reactDom2.default.findDOMNode(this.refs.kebabMenu);
-    return domNode.offsetWidth;
+    var width = _reactDom2.default.findDOMNode(this).offsetWidth;
+    var kebabRef = this.refs.kebabMenu;
+    return width - (!kebabRef ? 0 : _reactDom2.default.findDOMNode(kebabRef).offsetWidth);
   },
 
   componentWillUnmount: function componentWillUnmount() {
@@ -137,10 +168,8 @@ var Menu = _react2.default.createClass({
   }, 200, { leading: false }),
 
   render: function render() {
-    console.log('rendering');
     var _state = this.state;
     var elementWidths = _state.elementWidths;
-    var selectedIndex = _state.selectedIndex;
     var menuContainerWidth = _state.menuContainerWidth;
 
     var children = this.props.children;
@@ -160,8 +189,8 @@ var Menu = _react2.default.createClass({
       _react2.default.Children.map(children, function (element, index) {
         var copy = _react2.default.cloneElement(element, { key: '__' + index });
 
-        if (index >= selectedIndex && (accWidth += elementWidths[index]) <= menuContainerWidth) {
-          // if we are counting from left, and elements still fit
+        if ((accWidth += elementWidths[index]) <= menuContainerWidth) {
+          // if elements still fit
           menuItems.push(copy);
         } else {
           // otherwise next under kebab menu

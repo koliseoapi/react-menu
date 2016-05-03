@@ -1,39 +1,88 @@
+$menuBg: #0099cc;
+$menuBg2: darken($menuBg, 10%);
+$menuColor: #fff;
+
+$menu2Bg: #fff;
+$menu2Bg2: #eee;
+$menu2Color: #222;
+$menu2Border: #ccc;
+
 .responsive-menu {
-	border-bottom: 1px solid #ccc;
+	border-bottom: 2px solid $menuBg2;
+  flex-direction: row;
+  display: flex;
+  background-color: $menuBg;
 }
 
 .menu-item {
-	display: inline-block;
+  display: block;
 	padding: 10px;
 	background-color: #ffffff;
 	color: #222;
 	text-decoration: none;
+  white-space: nowrap;
+  background-color: $menuBg;
+  color: $menuColor;
+  line-height: 1.5;
+}
+.menu-item.active {
+  background-color: $menuBg2;
 }
 .kebab-menu {
-  display: inline-block;
+  margin-left: auto;
   &.hidden {
     display: none;
   }
 }
 
-$kebab-active-color: #ccc;
-$kebab-active-bg: #eee;
-
 .kebab-menu-button {
   cursor: pointer;
-  display: inline-block;
-  &:hover, &:focused {
-    border: $kebab-active-color;
-    background-color: $kebab-active-bg;
+  display: block;
+  padding: 7px 7px;
+  &:hover, &:focus {
+    background-color: $menuBg2;
   }
 }
 
 $dotWidth: 5px;
 
 .kebab-menu-button-dot {
+  display: block;
   width: $dotWidth;
   height: $dotWidth;
   border-radius: 50%;
-  background: $kebab-active-color;
+  background: $menuColor;
   margin: 3px 6px;
+}
+
+.kebab-menu-contents {
+  position: absolute;
+  right: 8px;
+  top: 60px;
+  border: 1px solid #ccc;
+  z-index: 2;
+  border: 1px solid $menu2Border;
+  border-radius: 3px;
+  &.hidden {
+    display: none;
+  }
+  & > .menu-item {
+    display: block;
+    background-color: $menu2Bg;
+    color: $menu2Color;
+
+    &:hover, &:focus {
+      background-color: $menu2Bg2;
+    }
+  }
+  $arrowWidth: 8px;
+  & .before {
+    border-width: $arrowWidth;
+    border-top-width: 0;
+    border-color: transparent transparent $menu2Bg;
+    position: absolute;
+    top: -$arrowWidth;
+    right: $arrowWidth;
+    border-style: solid;
+  }
 }

@@ -6,7 +6,22 @@ import React from "react";
 let createDummyComponent = function(label) {
   return React.createClass({
     render: function() { 
-      return ( <div className="test-selected-contents">{label}</div> )
+      // source http://emojicons.com/table-flipping
+      // Internet is awesome
+      var corpus = [
+        'Vanilla (╯°□°)╯︵ ┻━┻',
+        'Half way there ┬─┬﻿ ノ( ゜-゜ノ)',
+        'Pudgy (ノ ゜Д゜)ノ ︵ ┻━┻',
+        'In soviet Russia ┬─┬﻿ ︵ /(.□. \）',
+        'Emotional (ﾉಥ益ಥ）ﾉ﻿ ┻━┻',
+        'Magical (/¯◡ ‿ ◡)/¯ ~ ┻━┻'
+      ];
+      return ( 
+        <div className="test-selected-contents">
+          <h1>{label}</h1>
+          <p>{corpus[Math.floor(Math.random() * corpus.length)]}</p>
+        </div> 
+      )
     }
   })
 }
