@@ -1,7 +1,7 @@
 {
   "name": "react-rug-menu",
-  "version": "1.0.0",
-  "description": "A responsive menu for React that will hide anything that doesn't fit \"under the rug\"",
+  "version": "1.0.1",
+  "description": "A responsive menu for React that will hide anything that doesn't fit 'under the rug'",
   "repository": {
       "type": "git",
       "url": "https://github.com/icoloma/react-rug-menu"

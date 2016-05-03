@@ -3,7 +3,7 @@ import { Router, Route, Link, Redirect, hashHistory } from "react-router";
 import ReactDOM from "react-dom";
 import React from "react";
 
-let createDummyComponent = function(label) {
+let createDummyComponent = function(label, index) {
   return React.createClass({
     render: function() { 
       // source http://emojicons.com/table-flipping
@@ -19,7 +19,7 @@ let createDummyComponent = function(label) {
       return ( 
         <div className="test-selected-contents">
           <h1>{label}</h1>
-          <p>{corpus[Math.floor(Math.random() * corpus.length)]}</p>
+          <p>{corpus[index % corpus.length]}</p>
         </div> 
       )
     }
@@ -51,14 +51,14 @@ let MyAppComponent = React.createClass({
 ReactDOM.render(
   <Router history={hashHistory}>
     <Route path="/" component={MyAppComponent}>
-      <Route name="events" path="events" component={ createDummyComponent('events') } />
-      <Route name="books" path="books" component={ createDummyComponent('Books') } />
-      <Route name="theater" path="theater" component={ createDummyComponent('theater') } />
-      <Route name="music" path="music" component={ createDummyComponent('music') } />
-      <Route name="base" path="base" component={ createDummyComponent('BASE') } />
-      <Route name="chess" path="chess" component={ createDummyComponent('chess') } />
-      <Route name="go" path="go" component={ createDummyComponent('go') } />
-      <Route name="cars" path="cars" component={ createDummyComponent('cars') } />
+      <Route name="events" path="events" component={ createDummyComponent('events', 0) } />
+      <Route name="books" path="books" component={ createDummyComponent('Books', 1) } />
+      <Route name="theater" path="theater" component={ createDummyComponent('theater', 2) } />
+      <Route name="music" path="music" component={ createDummyComponent('music', 3) } />
+      <Route name="base" path="base" component={ createDummyComponent('BASE', 4) } />
+      <Route name="chess" path="chess" component={ createDummyComponent('chess', 5) } />
+      <Route name="go" path="go" component={ createDummyComponent('go', 6) } />
+      <Route name="cars" path="cars" component={ createDummyComponent('cars', 7) } />
       <Redirect from="/" to="events" />
     </Route>
   </Router>, 

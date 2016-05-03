@@ -25559,4 +25559,4 @@ module.exports = require('./lib/React');
 },{"./lib/React":92}]},{},[1])
 
 
-//# sourceMappingURL=react-responsive-menu.js.map
+//# sourceMappingURL=react-rug-menu.js.map

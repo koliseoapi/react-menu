@@ -44,7 +44,7 @@ gulp.task('styles', () => {
     ]))
     .pipe($.minifyCss())
     .pipe($.sourcemaps.write('.'))
-    .pipe($.rename('react-responsive-menu.css'))
+    .pipe($.rename('react-rug-menu.css'))
     .pipe(gulp.dest('build'))
     .pipe($.size({title: 'styles'}));
 });
@@ -59,7 +59,7 @@ gulp.task('scripts', () => {
       .bundle()
 
       .on('error', onError)
-      .pipe(source('react-responsive-menu.js'))
+      .pipe(source('react-rug-menu.js'))
       .pipe(buffer())
       .pipe($.sourcemaps.init({
         loadMaps: true,
@@ -87,9 +87,9 @@ gulp.task('test', () => {
 });
 
 gulp.task('compress', () => {
-  return gulp.src('build/react-responsive-menu.js')
+  return gulp.src('build/react-rug-menu.js')
     .pipe($.uglify())
-    .pipe($.rename('react-responsive-menu.min.js'))
+    .pipe($.rename('react-rug-menu.min.js'))
     .pipe(gulp.dest('build/'));
 });
 
