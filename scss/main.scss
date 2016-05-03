@@ -30,6 +30,7 @@ $menu2Border: #ccc;
 }
 .kebab-menu {
   margin-left: auto;
+  position: relative;
   &.hidden {
     display: none;
   }
