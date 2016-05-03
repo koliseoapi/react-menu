@@ -4,7 +4,6 @@ const browserSync = require('browser-sync');
 const gulpLoadPlugins = require('gulp-load-plugins');
 const browserify = require("browserify");
 const babelify = require("babelify");
-const cmq = require('gulp-combine-media-queries');
 const source = require('vinyl-source-stream')
 const buffer = require('vinyl-buffer')
 
@@ -43,7 +42,6 @@ gulp.task('styles', () => {
       'ios >= 7',
       'android >= 4.4'
     ]))
-  //  .pipe($.combineMediaQueries())
     .pipe($.minifyCss())
     .pipe($.sourcemaps.write('.'))
     .pipe($.rename('react-responsive-menu.css'))
