@@ -3,14 +3,23 @@
 This responsive menu will hide any options that don't fit in the screen into 
 a popup menu ("under the rug"). It also works while resizing the window.
 
+<a href="http://icoloma.github.io/react-rug-menu/">
+<img src="http://icoloma.github.io/react-rug-menu/Screencast.mp4.gif" title="Click to go to the demo page">
+</a>
+
 Inspired in [OkayNav](https://github.com/VPenkov/okayNav), but developed for 
 React and React Router. The module itself is tiny if you don't include React (below 200 lines).
 
 ## Use
 
-Nest `MenuItem` as if it were a `Link` tag, and nest all items inside of `Menu`. 
+Use `MenuItem` as if it were a `Link` tag, and nest all items inside of `Menu`. 
 
 ```
+import { Menu, MenuItem } from "../lib/main";
+import { Router, Route, hashHistory } from "react-router";
+import ReactDOM from "react-dom";
+import React from "react";
+
 let MyAppComponent = React.createClass({
 
   render: function() {
@@ -36,7 +45,6 @@ ReactDOM.render(
       <Route name="books" path="books" component={ bookComponent } />
       <Route name="go" path="go" component={ goComponent } />
       <Route name="cars" path="cars" component={ carComponent } />
-      <Redirect from="/" to="events" />
     </Route>
   </Router>, 
   document.getElementsByClassName('test-container')[0]
