@@ -12,9 +12,14 @@ React and React Router. The module itself is tiny if you don't include React (be
 
 ## Use
 
-Nest `MenuItem` as if it were a `Link` tag, and nest all items inside of `Menu`. 
+Use `MenuItem` as if it were a `Link` tag, and nest all items inside of `Menu`. 
 
 ```
+import { Menu, MenuItem } from "../lib/main";
+import { Router, Route, hashHistory } from "react-router";
+import ReactDOM from "react-dom";
+import React from "react";
+
 let MyAppComponent = React.createClass({
 
   render: function() {
@@ -40,7 +45,6 @@ ReactDOM.render(
       <Route name="books" path="books" component={ bookComponent } />
       <Route name="go" path="go" component={ goComponent } />
       <Route name="cars" path="cars" component={ carComponent } />
-      <Redirect from="/" to="events" />
     </Route>
   </Router>, 
   document.getElementsByClassName('test-container')[0]
