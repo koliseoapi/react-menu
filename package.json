@@ -1,24 +1,19 @@
 {
   "name": "react-rug-menu",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A responsive menu for React that will hide anything that doesn't fit 'under the rug'",
   "repository": {
-      "type": "git",
-      "url": "https://github.com/icoloma/react-rug-menu"
-    },
-    "keywords": [
-      "react", "responsive", "menu", "OkayNav"
-    ],
-    "author": "Nacho Coloma <icoloma@gmail.com>",
-    "license": "MIT",
-    "homepage": "https://github.com/icoloma/react-rug-menu",
-  "dependencies": {
-    "lodash.throttle": "^4.0.1",
-    "react": "^15.0.2",
-    "react-dom": "^15.0.2",
-    "react-router": "^2.4.0"
+    "type": "git",
+    "url": "https://github.com/icoloma/react-rug-menu"
   },
+  "keywords": [
+    "react", "responsive", "menu", "OkayNav"
+  ],
+  "author": "Nacho Coloma <icoloma@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/icoloma/react-rug-menu",
   "main": "lib/main.js",
+  "jsnext:main": "lib/main.js",
   "devDependencies": {
     "babel": "^6.5.2",
     "babel-core": "^6.7.7",
@@ -39,6 +34,10 @@
     "gulp-sourcemaps": "^2.0.0-alpha",
     "gulp-streamify": "1.0.2",
     "gulp-uglify": "^1.5.3",
+    "lodash.throttle": "^4.0.1",
+    "react": "^15.0.2",
+    "react-dom": "^15.0.2",
+    "react-router": "^2.4.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   },
