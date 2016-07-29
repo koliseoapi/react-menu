@@ -48,7 +48,7 @@ let MyAppComponent = React.createClass({
 
 })
 
-ReactDOM.render(
+const router =   
   <Router history={hashHistory}>
     <Route path="/" component={MyAppComponent}>
       <Route name="events" path="events" component={ createDummyComponent('events', 0) } />
@@ -61,6 +61,8 @@ ReactDOM.render(
       <Route name="cars" path="cars" component={ createDummyComponent('cars', 7) } />
       <Redirect from="/" to="events" />
     </Route>
-  </Router>, 
-  document.getElementsByClassName('test-container')[0]
+  </Router>;
+ReactDOM.render(router, document.getElementsByClassName('test-container1')[0]
+);
+ReactDOM.render(router, document.getElementsByClassName('test-container2')[0]
 );
