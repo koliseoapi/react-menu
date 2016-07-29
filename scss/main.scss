@@ -12,6 +12,12 @@ $menu2Border: #ccc;
   flex-direction: row;
   display: flex;
   background-color: $menuBg;
+  //overflow: hidden;
+  // push outside the screen while calculating size of elements
+  &.hidden {
+    position: fixed;
+    top: -10000;
+  }
 }
 
 .menu-item {
