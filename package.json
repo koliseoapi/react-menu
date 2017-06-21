@@ -7,7 +7,10 @@
     "url": "https://github.com/icoloma/react-rug-menu"
   },
   "keywords": [
-    "react", "responsive", "menu", "OkayNav"
+    "react",
+    "responsive",
+    "menu",
+    "OkayNav"
   ],
   "author": "Nacho Coloma <icoloma@gmail.com>",
   "license": "MIT",
@@ -37,7 +40,8 @@
     "lodash": "^4.0.1",
     "react": "^15.0.2",
     "react-dom": "^15.0.2",
-    "react-router": "^2.4.0",
+    "react-router": "^4.1.1",
+    "react-router-dom": "^4.1.1",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   },
