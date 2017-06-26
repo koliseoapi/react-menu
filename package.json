@@ -4,7 +4,7 @@
   "description": "A responsive menu for React that will hide anything that doesn't fit 'under the rug'",
   "repository": {
     "type": "git",
-    "url": "https://github.com/icoloma/react-rug-menu"
+    "url": "https://github.com/koliseoapi/react-rug-menu"
   },
   "keywords": [
     "react",
@@ -14,7 +14,7 @@
   ],
   "author": "Nacho Coloma <icoloma@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/icoloma/react-rug-menu",
+  "homepage": "https://github.com/koliseoapi/react-rug-menu",
   "main": "lib/main.js",
   "jsnext:main": "lib/main.js",
   "devDependencies": {
