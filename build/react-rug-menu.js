@@ -59,7 +59,11 @@ var KebabMenu = function (_React$Component) {
 
     _this.state = {
       // true to display the drop-down options
-      popupVisible: false
+      popupVisible: false,
+      // hack to check if the component has been mounted
+      // https://github.com/facebook/react/issues/3417 
+      // on the first render we cannot set the hidden class because we need its width on the parent menu componentDidMount
+      mounted: false
     };
     (0, _lodash.bindAll)(_this, ['bodyClick', 'switchPopupVisible']);
     return _this;
@@ -85,6 +89,7 @@ var KebabMenu = function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       document.body.addEventListener('click', this.bodyClick);
+      this.state.mounted = true;
     }
   }, {
     key: "componentWillUnmount",
@@ -97,12 +102,14 @@ var KebabMenu = function (_React$Component) {
       var _props = this.props,
           children = _props.children,
           className = _props.className;
-      var popupVisible = this.state.popupVisible;
+      var _state = this.state,
+          popupVisible = _state.popupVisible,
+          mounted = _state.mounted;
 
 
       return _react2.default.createElement(
         "div",
-        { className: className + (!children || !children.length ? ' hidden' : '') },
+        { className: className + ((!children || !children.length) && mounted ? ' hidden' : '') },
         _react2.default.createElement(
           "a",
           { className: "kebab-menu-button", onClick: this.switchPopupVisible },
@@ -206,9 +213,9 @@ var Menu = function (_React$Component2) {
   }, {
     key: "render",
     value: function render() {
-      var _state = this.state,
-          elementWidths = _state.elementWidths,
-          menuContainerWidth = _state.menuContainerWidth;
+      var _state2 = this.state,
+          elementWidths = _state2.elementWidths,
+          menuContainerWidth = _state2.menuContainerWidth;
       var _props2 = this.props,
           children = _props2.children,
           className = _props2.className,
