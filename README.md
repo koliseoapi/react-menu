@@ -50,3 +50,15 @@ ReactDOM.render(
   document.getElementsByClassName('test-container')[0]
 );
 ```
+
+## Develop
+
+```bash
+npm i
+
+npm run build
+
+npm run watch
+```
+
+There is no `build` step. The library is a single file in `lib/main.js` and published as is.
