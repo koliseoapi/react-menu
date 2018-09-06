@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menu renders for authenticated user 1`] = `
+<nav
+  className="responsive-menu"
+>
+  <div
+    className="kebab-menu"
+  >
+    <a
+      className="kebab-menu-button"
+      onClick={[Function]}
+    >
+      <span
+        className="kebab-menu-button-dot"
+      />
+      <span
+        className="kebab-menu-button-dot"
+      />
+      <span
+        className="kebab-menu-button-dot"
+      />
+    </a>
+    <div
+      className="kebab-menu-contents hidden"
+    >
+      <div
+        className="before"
+      />
+      <a
+        aria-current={null}
+        className="menu-item"
+        href="#/foo"
+        onClick={[Function]}
+      />
+      <a
+        aria-current={null}
+        className="menu-item"
+        href="#/bar"
+        onClick={[Function]}
+      />
+    </div>
+  </div>
+</nav>
+`;
