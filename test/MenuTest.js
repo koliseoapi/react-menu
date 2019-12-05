@@ -6,6 +6,7 @@ import { Menu, MenuItem } from "../lib/main";
 
 describe("Menu", () => {
   function createNodeMock(element) {
+    debugger;
     const {
       props: { className }
     } = element;
@@ -13,7 +14,7 @@ describe("Menu", () => {
       return {
         offsetWidth: 10
       };
-    } else if (className === "responsive-menu hidden") {
+    } else if (className === "responsive-menu") {
       return {
         parentElement: {
           offsetWidth: 30
@@ -28,7 +29,7 @@ describe("Menu", () => {
         ]
       };
     }
-    console.log(element);
+    //console.log(element);
     return {};
   }
   it("renders for authenticated user", () => {

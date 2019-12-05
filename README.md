@@ -1,18 +1,18 @@
 # React Rug Menu
 
-This responsive menu will hide any options that don't fit in the screen into 
+This responsive menu will hide any options that don't fit in the screen into
 a popup menu ("under the rug"). It also works while resizing the window.
 
 <a href="http://koliseoapi.github.io/react-rug-menu/">
 <img src="http://koliseoapi.github.io/react-rug-menu/Screencast.mp4.gif" title="Click to go to the demo page">
 </a>
 
-Inspired in [OkayNav](https://github.com/VPenkov/okayNav), but developed for 
+Inspired in [OkayNav](https://github.com/VPenkov/okayNav), but developed for
 React and React Router. The module itself is tiny (below 200 lines).
 
 ## Use
 
-Use `MenuItem` as if it were a `Link` tag, and nest all items inside of `Menu`. 
+Use `MenuItem` as if it were a `Link` tag, and nest all items inside of `Menu`.
 
 ```
 import { Menu, MenuItem } from "../lib/main";
@@ -46,10 +46,14 @@ ReactDOM.render(
       <Route name="go" path="go" component={ goComponent } />
       <Route name="cars" path="cars" component={ carComponent } />
     </Route>
-  </Router>, 
+  </Router>,
   document.getElementsByClassName('test-container')[0]
 );
 ```
+
+## Accessibility
+
+ARIA roles are automatically generated so that a screen reader will read all the menu items like any normal navigation menu.
 
 ## Develop
 

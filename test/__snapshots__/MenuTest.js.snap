@@ -2,43 +2,58 @@
 
 exports[`Menu renders for authenticated user 1`] = `
 <nav
-  className="responsive-menu"
+  className="responsive-menu-nav "
 >
   <div
-    className="kebab-menu"
+    className="responsive-menu"
+    role="list"
   >
-    <a
-      className="kebab-menu-button"
-      onClick={[Function]}
-    >
-      <span
-        className="kebab-menu-button-dot"
-      />
-      <span
-        className="kebab-menu-button-dot"
-      />
-      <span
-        className="kebab-menu-button-dot"
-      />
-    </a>
     <div
-      className="kebab-menu-contents hidden"
+      className="kebab-menu"
+      role="presentation"
     >
+      <a
+        aria-hidden="true"
+        className="kebab-menu-button"
+        onClick={[Function]}
+      >
+        <span
+          className="kebab-menu-button-dot"
+        />
+        <span
+          className="kebab-menu-button-dot"
+        />
+        <span
+          className="kebab-menu-button-dot"
+        />
+      </a>
       <div
-        className="before"
-      />
-      <a
-        aria-current={null}
-        className="menu-item"
-        href="#/foo"
-        onClick={[Function]}
-      />
-      <a
-        aria-current={null}
-        className="menu-item"
-        href="#/bar"
-        onClick={[Function]}
-      />
+        aria-hidden="false"
+        className="kebab-menu-contents hidden"
+      >
+        <div
+          className="menu-item-li"
+          role="listitem"
+        >
+          <a
+            aria-current={null}
+            className="menu-item"
+            href="#/foo"
+            onClick={[Function]}
+          />
+        </div>
+        <div
+          className="menu-item-li"
+          role="listitem"
+        >
+          <a
+            aria-current={null}
+            className="menu-item"
+            href="#/bar"
+            onClick={[Function]}
+          />
+        </div>
+      </div>
     </div>
   </div>
 </nav>

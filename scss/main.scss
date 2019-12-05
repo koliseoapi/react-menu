@@ -8,7 +8,7 @@ $menu2Color: #222;
 $menu2Border: #ccc;
 
 .responsive-menu {
-	border-bottom: 2px solid $menuBg2;
+  border-bottom: 2px solid $menuBg2;
   flex-direction: row;
   display: flex;
   background-color: $menuBg;
@@ -22,10 +22,10 @@ $menu2Border: #ccc;
 
 .menu-item {
   display: block;
-	padding: 10px;
-	background-color: #ffffff;
-	color: #222;
-	text-decoration: none;
+  padding: 10px;
+  background-color: #ffffff;
+  color: #222;
+  text-decoration: none;
   white-space: nowrap;
   background-color: $menuBg;
   color: $menuColor;
@@ -46,7 +46,8 @@ $menu2Border: #ccc;
   cursor: pointer;
   display: block;
   padding: 7px 7px;
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     background-color: $menuBg2;
   }
 }
@@ -73,17 +74,20 @@ $dotWidth: 5px;
   &.hidden {
     display: none;
   }
-  & > .menu-item {
+  & .menu-item {
     display: block;
     background-color: $menu2Bg;
     color: $menu2Color;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       background-color: $menu2Bg2;
     }
   }
   $arrowWidth: 8px;
-  & .before {
+  &::before {
+    content: " ";
+    display: block;
     border-width: $arrowWidth;
     border-top-width: 0;
     border-color: transparent transparent $menu2Bg;
