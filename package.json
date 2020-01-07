@@ -1,53 +1,46 @@
 {
-  "name": "react-rug-menu",
-  "version": "2.0.2",
-  "description": "A responsive menu for React that will hide anything that doesn't fit 'under the rug'",
+  "name": "@koliseoapi/react-menu",
+  "version": "2.1.0",
+  "description": "A responsive menu that hides overflowing menu items under a three-dot button",
   "repository": {
     "type": "git",
-    "url": "https://github.com/koliseoapi/react-rug-menu"
+    "url": "https://github.com/koliseoapi/react-menu"
   },
   "keywords": [
     "react",
     "responsive",
-    "menu",
-    "OkayNav"
+    "menu"
   ],
   "author": "Nacho Coloma <icoloma@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/koliseoapi/react-rug-menu",
+  "homepage": "https://github.com/koliseoapi/react-menu",
   "main": "lib/main.js",
   "jsnext:main": "lib/main.js",
-  "engines": {
-    "node": ">=0.10.0",
-    "npm": ">=2.1.18"
-  },
   "devDependencies": {
-    "@babel/core": "^7.7.4",
-    "@babel/plugin-proposal-object-rest-spread": "^7.7.4",
-    "@babel/preset-env": "^7.7.4",
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
     "@babel/preset-react": "^7.7.4",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "http-server": "^0.12.0",
     "jest": "^24.9.0",
-    "node-sass": "^4.13.0",
     "npm-run-all": "^4.1.5",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-router-dom": "^5.1.2",
     "react-test-renderer": "^16.12.0",
-    "webpack": "^4.41.2",
+    "sass": "^1.24.2",
+    "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10"
   },
   "scripts": {
     "postversion": "git push && git push --tags",
     "watch:webpack": "NODE_ENV=development webpack --watch --config webpack.config.js",
-    "watch:css": "inotifywait -m -r -e close_write,create,delete ./scss/ | while read NEWFILE; do node-sass --output-style compressed ./scss/main.scss > ./build/react-rug-menu.css; done",
+    "watch:css": "sass --watch scss/main.scss build/react-menu.css",
     "watch:local-server": "xdg-open http://127.0.0.1:8080/test/ && http-server -s -c-1 .",
     "watch": "npm-run-all --parallel watch:**",
-    "jest-watch": "jest --watch",
     "test": "jest",
-    "build": "NODE_ENV=production webpack --config webpack.config.js && node-sass --output-style compressed ./scss/main.scss > ./build/react-rug-menu.css"
+    "build": "NODE_ENV=production webpack --config webpack.config.js && sass --style compressed scss/main.scss build/react-menu.css"
   }
 }
