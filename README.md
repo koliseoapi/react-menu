@@ -3,8 +3,8 @@
 This responsive menu will hide any options that don't fit in the screen into
 a popup menu ("under the rug"). It also works while resizing the window.
 
-<a href="http://koliseoapi.github.io/react-rug-menu/">
-<img src="http://koliseoapi.github.io/react-rug-menu/Screencast.mp4.gif" title="Click to go to the demo page">
+<a href="http://koliseoapi.github.io/react-menu/">
+<img src="http://koliseoapi.github.io/react-menu/Screencast.mp4.gif" title="Click to go to the demo page">
 </a>
 
 Inspired in [OkayNav](https://github.com/VPenkov/okayNav), but developed for

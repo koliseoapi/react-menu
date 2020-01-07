@@ -1,51 +1,55 @@
 <html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="../build/react-rug-menu.css">
-  <style>
-    body {
-      font: 14px sans-serif;
-      line-height: 1;
-      margin: 0;
-      padding: 0;
-    }
-    .test-selected-contents {
-      background-color: #ddd;
-      padding: 20px;
-      font-size: 18px;
-    }
-    .profile-image {
-      width: 300px;
-      height: 100px;
-      background-color: #0063cc;
-      float:left;
-    }
-    .test-container2 {
-      margin-left: 300px;
-    }
-    hr {
-      margin: 30px 0;
-      color: #aaa;
-      height: 3px;
-    }
-  </style>
-</head>
-<body>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../build/react-menu.css" />
+    <style>
+      body {
+        font: 14px sans-serif;
+        line-height: 1;
+        margin: 0;
+        padding: 0;
+      }
+      .test-selected-contents {
+        background-color: #ddd;
+        padding: 20px;
+        font-size: 18px;
+      }
+      .profile-image {
+        width: 300px;
+        height: 100px;
+        background-color: #0063cc;
+        float: left;
+      }
+      .test-container2 {
+        margin-left: 300px;
+      }
+      hr {
+        margin: 30px 0;
+        color: #aaa;
+        height: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <p style="margin: 20px 10px">
+      A test of responsive menu based on React. <br /><a
+        href="https://github.com/koliseoapi/react-menu"
+        >Github repository</a
+      >, <a href="https://www.npmjs.com/package/react-menu">npm package</a>.
+    </p>
 
-  <p style="margin: 20px 10px">A test of responsive menu based on React. <br><a href="https://github.com/koliseoapi/react-rug-menu">Github repository</a>, <a href="https://www.npmjs.com/package/react-rug-menu">npm package</a>.
+    <h3>menu takes all the page width</h3>
+    <div class="test-container1"></div>
+    <hr />
 
-  <h3>menu takes all the page width</h3>
-  <div class="test-container1"></div>
-  <hr>
+    <h3>menu takes part of the page width</h3>
+    <!-- TODO: flex does not work here -->
+    <div class="parent-container">
+      <div class="profile-image"></div>
+      <div class="test-container2"></div>
+    </div>
 
-  <h3>menu takes part of the page width</h3>
-  <!-- TODO: flex does not work here -->
-  <div class="parent-container">
-    <div class="profile-image"></div>  
-    <div class="test-container2"></div>
-  </div>
-
-  <script src="../build/test.js"></script>
-</body>
+    <script src="../build/test.js"></script>
+  </body>
 </html>
