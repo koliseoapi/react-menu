@@ -59,10 +59,5 @@ ARIA roles are automatically generated so that a screen reader will read all the
 
 ```bash
 npm i
-
-npm run build
-
 npm run watch
 ```
-
-There is no `build` step. The library is a single file in `lib/main.js` and published as is.
